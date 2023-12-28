@@ -1,0 +1,18 @@
+.react-swipeable-view-container .MuiBox-root {
+  padding: 0 !important;
+}
+
+.button {
+  height: 5px;
+  border-radius: 2px;
+}
+
+.inactive {
+  background-color: rgba(255, 255, 255, 0.4);
+  width: 20px;
+}
+
+.active {
+  background-color: rgba(255, 255, 255, 1);
+  width: 40px;
+}
