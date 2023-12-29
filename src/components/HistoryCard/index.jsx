@@ -1,7 +1,6 @@
 import React from "react";
 
 import { Box, Avatar, Typography } from "@mui/material";
-import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import MusicNoteIcon from "@mui/icons-material/MusicNote";
 import ReplyIcon from "@mui/icons-material/Reply";
 import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
