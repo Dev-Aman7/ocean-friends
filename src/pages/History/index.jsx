@@ -4,11 +4,22 @@ import Header from "../../components/Header";
 
 import HistoryCard from "../../components/HistoryCard";
 
-const index = () => {
+const index = ({ handleHistory }) => {
   return (
     <Box>
       <Header title={"History"} />
-      <HistoryCard />
+      <Box
+        sx={{
+          overflow: "auto",
+
+          height: "80vh",
+
+          // marginBottom: "3rem",
+        }}
+        onClick={handleHistory}
+      >
+        <HistoryCard />
+      </Box>
     </Box>
   );
 };

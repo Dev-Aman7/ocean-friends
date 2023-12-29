@@ -31,15 +31,7 @@ const logs = [
 ];
 const index = () => {
   return (
-    <Box
-      sx={{
-        overflow: "auto",
-
-        height: "80vh",
-
-        // marginBottom: "3rem",
-      }}
-    >
+    <Box>
       <Box
         sx={{
           paddingBottom: "3rem",

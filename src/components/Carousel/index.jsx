@@ -2,11 +2,8 @@ import * as React from "react";
 import PropTypes from "prop-types";
 import SwipeableViews from "react-swipeable-views-react-18-fix";
 import { useTheme } from "@mui/material/styles";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import Card1 from "../../assets/card3.svg";
 
 import "./carousel.css";
@@ -37,7 +34,7 @@ TabPanel.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
-export default function FullWidthTabs() {
+export default function FullWidthTabs({ onClick }) {
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
 
@@ -57,14 +54,24 @@ export default function FullWidthTabs() {
         onChangeIndex={handleChangeIndex}
         style={{ width: "100%", padding: "1rem 0 1rem 0" }}
       >
-        <TabPanel value={value} index={0} dir={theme.direction}>
+        <TabPanel
+          value={value}
+          index={0}
+          dir={theme.direction}
+          onClick={onClick}
+        >
           <img
             src={Card1}
             alt="card"
             style={{ width: "100%", transform: "rotate(90deg)" }}
           />
         </TabPanel>
-        <TabPanel value={value} index={1} dir={theme.direction}>
+        <TabPanel
+          value={value}
+          index={1}
+          dir={theme.direction}
+          onClick={onClick}
+        >
           <img
             src={Card1}
             alt="card"

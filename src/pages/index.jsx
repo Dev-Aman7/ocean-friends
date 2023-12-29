@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
-import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
-import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 import Typography from "@mui/material/Typography";
 import Battery90Icon from "@mui/icons-material/Battery90";
@@ -18,7 +16,16 @@ import "../styles/generic.css";
 const Index = () => {
   // create tabs using mui
   const [value, setValue] = useState("1");
+  const [cardTab, setCardTab] = useState(0);
 
+  const handleTab = (val = 1) => {
+    setCardTab(val);
+  };
+
+  const handleHistory = () => {
+    setCardTab(1);
+    setValue("1");
+  };
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -55,17 +62,19 @@ const Index = () => {
       </Box>
       <TabContext value={value}>
         <TabPanel value="1">
-          <Home />
+          <Home cardTab={cardTab} setCardTab={handleTab} />
         </TabPanel>
         <TabPanel value="2">
           <Catalogue />
         </TabPanel>
         <TabPanel value="3" sx={{ flex: 1, overflow: "auto" }}>
-          <History />
+          <History handleHistory={handleHistory} />
         </TabPanel>
         <TabPanel value="4">Item Four</TabPanel>
       </TabContext>
-      <Nav handleChange={handleChange} value={value} />
+      {value !== 1 && cardTab !== 1 && (
+        <Nav handleChange={handleChange} value={value} />
+      )}
     </Box>
   );
 };

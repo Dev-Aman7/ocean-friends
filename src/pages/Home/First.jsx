@@ -2,9 +2,8 @@ import { Typography, Box, Avatar } from "@mui/material";
 import React from "react";
 
 import Carousel from "../../components/Carousel";
-import Card1 from "../../assets/card3.svg";
 
-const First = () => {
+const First = ({ onClick }) => {
   return (
     <Box
       sx={{
@@ -50,7 +49,7 @@ const First = () => {
           <Avatar>AB</Avatar>
         </Box>
       </Box>
-      <Carousel />
+      <Carousel onClick={onClick} />
 
       {/* <img src={Card1} alt="card" style={{ width: "20rem" }} /> */}
     </Box>
