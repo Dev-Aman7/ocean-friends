@@ -4,7 +4,7 @@ import React from "react";
 import Carousel from "../../components/Carousel";
 import man from "../../assets/man.png";
 
-const First = ({ onClick }) => {
+const First = ({ onClick, back }) => {
   return (
     <Box
       sx={{
@@ -12,9 +12,22 @@ const First = ({ onClick }) => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        "&::-webkit-scrollbar": {
+          display: "none",
+        },
+        scrollbarWidth: "none",
       }}
     >
-      <Box sx={{ display: "flex", width: "100%" }}>
+      <Box
+        sx={{
+          display: "flex",
+          width: "100%",
+          "&::-webkit-scrollbar": {
+            display: "none",
+          },
+          scrollbarWidth: "none",
+        }}
+      >
         <Box sx={{ flex: 1 }}>
           <Typography
             sx={{
@@ -50,7 +63,7 @@ const First = ({ onClick }) => {
           <Avatar src={man} />
         </Box>
       </Box>
-      <Carousel onClick={onClick} />
+      <Carousel onClick={onClick} back={back} />
 
       {/* <img src={Card1} alt="card" style={{ width: "20rem" }} /> */}
     </Box>

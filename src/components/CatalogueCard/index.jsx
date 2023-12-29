@@ -2,27 +2,34 @@ import React from "react";
 
 import { Button, Box, Avatar, Typography } from "@mui/material";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import WifiIcon from "@mui/icons-material/Wifi";
+import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
+import HomeIcon from "@mui/icons-material/Home";
 
 const logs = [
   {
     id: 1,
     title: "Mobile",
     amount: "34.00",
+    icon: <LocalPhoneIcon />,
   },
   {
     id: 2,
     title: "Internet and TV",
     amount: "21.00",
+    icon: <WifiIcon />,
   },
   {
     id: 3,
     title: "Traffic and fines",
     amount: "1221.00",
+    icon: <DirectionsCarIcon />,
   },
   {
     id: 4,
     title: "Housing Services",
     amount: "0.00",
+    icon: <HomeIcon />,
   },
 ];
 const index = () => {
@@ -43,7 +50,7 @@ const index = () => {
           marginBottom: "1rem",
         }}
       >
-        <LocalPhoneIcon />
+        {log.icon}
       </Avatar>
       {/* </Box> */}
       <Box

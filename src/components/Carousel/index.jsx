@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import SwipeableViews from "react-swipeable-views-react-18-fix";
 import swoop from "../../assets/swoop.mp3";
@@ -38,10 +38,21 @@ TabPanel.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
-export default function FullWidthTabs({ onClick }) {
+export default function FullWidthTabs({ onClick, back }) {
   const theme = useTheme();
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
   const [play] = useSound(swoop);
+  const [style, setStyle] = useState("");
+
+  useEffect(() => {
+    console.log(back);
+    if (back) {
+      setStyle("rotate-vertical");
+      setTimeout(() => {
+        setStyle("");
+      }, 200);
+    }
+  }, [back]);
 
   const handleChange = (newValue) => {
     play();
@@ -53,20 +64,50 @@ export default function FullWidthTabs({ onClick }) {
   };
 
   return (
-    <Box sx={{ width: "100%", mt: "2rem" }}>
+    <Box
+      sx={{
+        width: "100%",
+        mt: "2rem",
+        overflow: "hidden",
+        "&::-webkit-scrollbar": {
+          display: "none",
+        },
+        scrollbarWidth: "none",
+      }}
+    >
       <SwipeableViews
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={value}
         onChangeIndex={handleChangeIndex}
-        style={{ width: "100%", padding: "1rem 0 1rem 0" }}
+        style={{
+          width: "100%",
+          padding: "1rem 0 1rem 0",
+          overflow: "hidden",
+          "&::-webkit-scrollbar": {
+            display: "none",
+          },
+          scrollbarWidth: "none",
+        }}
       >
         <TabPanel
           value={value}
           index={0}
           dir={theme.direction}
           onClick={onClick}
+          sx={{
+            overflow: "hidden",
+            "&::-webkit-scrollbar": {
+              display: "none",
+            },
+            scrollbarWidth: "none",
+          }}
         >
-          <img src={Card1} alt="card" style={{ transform: "rotate(270deg)" }} />
+          <img
+            src={Card1}
+            alt="card"
+            style={{ transform: "rotate(270deg)" }}
+            className={style}
+          />
         </TabPanel>
         <TabPanel
           value={value}
