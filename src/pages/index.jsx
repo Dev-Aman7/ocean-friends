@@ -55,9 +55,9 @@ const Index = () => {
       >
         <Typography sx={{ color: "white" }}>9:41</Typography>
         <Box>
-          <Battery90Icon sx={{ color: "white" }} />
-          <WifiIcon sx={{ color: "white" }} />
           <NetworkCellIcon sx={{ color: "white" }} />
+          <WifiIcon sx={{ color: "white" }} />
+          <Battery90Icon sx={{ color: "white" }} />
         </Box>
       </Box>
       <TabContext value={value}>

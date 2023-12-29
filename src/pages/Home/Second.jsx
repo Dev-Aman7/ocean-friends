@@ -1,7 +1,8 @@
 import { Typography, Box, Button } from "@mui/material";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-import Card1 from "../../assets/card3.svg";
+import Card1 from "../../assets/card1.svg";
+import CardBack from "../../assets/card-back.svg";
 import HistoryOutlinedIcon from "@mui/icons-material/HistoryOutlined";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import ReplyIcon from "@mui/icons-material/Reply";
@@ -14,6 +15,14 @@ import HistoryCard from "../../components/HistoryCard";
 const Second = ({ onClick }) => {
   const [size, setSize] = useState(0);
   const [cardHeight, setCarHeight] = useState(25);
+  const [flip, setFlip] = useState(false);
+  const [load, setLoad] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoad(false);
+    }, 200);
+  }, []);
 
   const handleHeight = () => {
     if (size === 0) {
@@ -85,7 +94,27 @@ const Second = ({ onClick }) => {
 
       {size !== 2 && (
         <>
-          <img src={Card1} alt="card" style={{ width: "20rem" }} />
+          <Box
+            onClick={() => {
+              setFlip((val) => !val);
+            }}
+          >
+            {!flip ? (
+              <img
+                src={Card1}
+                alt="card"
+                style={{ width: "20rem" }}
+                className={load && "rotate-horizontal"}
+              />
+            ) : (
+              <img
+                src={CardBack}
+                alt="card"
+                style={{ width: "20rem" }}
+                className="fadeAnimation"
+              />
+            )}
+          </Box>
 
           <Box
             sx={{

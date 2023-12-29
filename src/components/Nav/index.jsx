@@ -1,4 +1,5 @@
 import React from "react";
+import useSound from "use-sound";
 import { Box, IconButton } from "@mui/material";
 
 import HomeIcon from "@mui/icons-material/HomeOutlined";
@@ -6,7 +7,14 @@ import SpaceDashboardOutlinedIcon from "@mui/icons-material/SpaceDashboardOutlin
 import HistoryOutlinedIcon from "@mui/icons-material/HistoryOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 
-const index = ({ handleChange, value }) => {
+import click from "../../assets/click.mp3";
+
+const Index = ({ handleChange, value }) => {
+  const [play] = useSound(click);
+  const customHandle = (e, val) => {
+    handleChange(e, val);
+    play();
+  };
   return (
     <Box
       sx={{
@@ -26,11 +34,13 @@ const index = ({ handleChange, value }) => {
       }}
     >
       <IconButton
-        onClick={(e) => handleChange(e, "1")}
+        onClick={(e) => customHandle(e, "1")}
         sx={{
           color: "#fff",
           background:
-            value === "1" ? "linear-gradient(to bottom, #3f2b96, #a8c0ff)" : "",
+            value === "1"
+              ? "linear-gradient(27deg, rgba(2,0,36,1) 0%, rgba(12,10,12,1) 39%, rgba(43,65,98,1) 97%, rgba(0,212,255,1) 100%)"
+              : "",
           width: "4rem",
           height: "4rem",
         }}
@@ -38,11 +48,13 @@ const index = ({ handleChange, value }) => {
         <HomeIcon sx={{ fontSize: "2rem" }} />
       </IconButton>
       <IconButton
-        onClick={(e) => handleChange(e, "2")}
+        onClick={(e) => customHandle(e, "2")}
         sx={{
           color: "#fff",
           background:
-            value === "2" ? "linear-gradient(to bottom, #3f2b96, #a8c0ff)" : "",
+            value === "2"
+              ? "linear-gradient(27deg, rgba(2,0,36,1) 0%, rgba(12,10,12,1) 39%, rgba(43,65,98,1) 97%, rgba(0,212,255,1) 100%)"
+              : "",
           width: "4rem",
           height: "4rem",
         }}
@@ -50,11 +62,13 @@ const index = ({ handleChange, value }) => {
         <SpaceDashboardOutlinedIcon />
       </IconButton>
       <IconButton
-        onClick={(e) => handleChange(e, "3")}
+        onClick={(e) => customHandle(e, "3")}
         sx={{
           color: "#fff",
           background:
-            value === "3" ? "linear-gradient(to bottom, #3f2b96, #a8c0ff)" : "",
+            value === "3"
+              ? "linear-gradient(27deg, rgba(2,0,36,1) 0%, rgba(12,10,12,1) 39%, rgba(43,65,98,1) 97%, rgba(0,212,255,1) 100%)"
+              : "",
           width: "4rem",
           height: "4rem",
         }}
@@ -62,11 +76,13 @@ const index = ({ handleChange, value }) => {
         <HistoryOutlinedIcon />
       </IconButton>
       <IconButton
-        onClick={(e) => handleChange(e, "4")}
+        onClick={(e) => customHandle(e, "4")}
         sx={{
           color: "#fff",
           background:
-            value === "4" ? "linear-gradient(to bottom, #3f2b96, #a8c0ff)" : "",
+            value === "4"
+              ? "linear-gradient(27deg, rgba(2,0,36,1) 0%, rgba(12,10,12,1) 39%, rgba(43,65,98,1) 97%, rgba(0,212,255,1) 100%)"
+              : "",
           width: "4rem",
           height: "4rem",
         }}
@@ -77,4 +93,4 @@ const index = ({ handleChange, value }) => {
   );
 };
 
-export default index;
+export default Index;

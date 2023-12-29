@@ -1,6 +1,8 @@
 import { Avatar, Box, Typography } from "@mui/material";
 import React from "react";
 
+import man from "../../assets/man.png";
+
 const Header = ({ title }) => {
   return (
     <Box
@@ -19,7 +21,7 @@ const Header = ({ title }) => {
       >
         {title}
       </Typography>
-      <Avatar>AB</Avatar>
+      <Avatar src={man} />
     </Box>
   );
 };

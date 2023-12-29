@@ -2,3 +2,30 @@
   color: green;
   margin: 10px;
 }
+/* Define the keyframes for the rotation animation */
+@keyframes rotateHorizontal {
+  from {
+    transform: rotate(-90deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/* Apply the animation to the image */
+.rotate-horizontal {
+  animation: rotateHorizontal 0.2s linear;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeAnimation {
+  animation: fadeIn 0.2s ease-in;
+}

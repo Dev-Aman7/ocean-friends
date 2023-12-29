@@ -60,7 +60,9 @@ const index = () => {
             {/* <Box> */}
             <Avatar
               sx={{
-                background: "linear-gradient(to bottom, #3f2b96, #a8c0ff)",
+                background:
+                  "linear-gradient(27deg, rgba(2,0,36,1) 0%, rgba(12,10,12,1) 39%, rgba(43,65,98,1) 97%, rgba(0,212,255,1) 100%)",
+
                 marginBottom: "1rem",
               }}
             >
@@ -120,7 +122,8 @@ const index = () => {
             {/* <Box> */}
             <Avatar
               sx={{
-                background: "linear-gradient(to bottom, #3f2b96, #a8c0ff)",
+                background:
+                  "linear-gradient(27deg, rgba(2,0,36,1) 0%, rgba(12,10,12,1) 39%, rgba(43,65,98,1) 97%, rgba(0,212,255,1) 100%)",
                 marginBottom: "1rem",
               }}
             >

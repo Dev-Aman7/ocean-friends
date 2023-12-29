@@ -1,10 +1,14 @@
 import * as React from "react";
 import PropTypes from "prop-types";
 import SwipeableViews from "react-swipeable-views-react-18-fix";
+import swoop from "../../assets/swoop.mp3";
+import useSound from "use-sound";
+
 import { useTheme } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import Card1 from "../../assets/card3.svg";
+import Card1 from "../../assets/card1.svg";
+import Card2 from "../../assets/card2.svg";
 
 import "./carousel.css";
 
@@ -37,8 +41,10 @@ TabPanel.propTypes = {
 export default function FullWidthTabs({ onClick }) {
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
+  const [play] = useSound(swoop);
 
   const handleChange = (newValue) => {
+    play();
     setValue(newValue);
   };
 
@@ -60,11 +66,7 @@ export default function FullWidthTabs({ onClick }) {
           dir={theme.direction}
           onClick={onClick}
         >
-          <img
-            src={Card1}
-            alt="card"
-            style={{ width: "100%", transform: "rotate(90deg)" }}
-          />
+          <img src={Card1} alt="card" style={{ transform: "rotate(270deg)" }} />
         </TabPanel>
         <TabPanel
           value={value}
@@ -72,11 +74,7 @@ export default function FullWidthTabs({ onClick }) {
           dir={theme.direction}
           onClick={onClick}
         >
-          <img
-            src={Card1}
-            alt="card"
-            style={{ width: "100%", transform: "rotate(90deg)" }}
-          />
+          <img src={Card2} alt="card" style={{ transform: "rotate(270deg)" }} />
         </TabPanel>
       </SwipeableViews>
       <Box

@@ -2,6 +2,7 @@ import { Typography, Box, Avatar } from "@mui/material";
 import React from "react";
 
 import Carousel from "../../components/Carousel";
+import man from "../../assets/man.png";
 
 const First = ({ onClick }) => {
   return (
@@ -46,7 +47,7 @@ const First = ({ onClick }) => {
           </Typography>
         </Box>
         <Box>
-          <Avatar>AB</Avatar>
+          <Avatar src={man} />
         </Box>
       </Box>
       <Carousel onClick={onClick} />
