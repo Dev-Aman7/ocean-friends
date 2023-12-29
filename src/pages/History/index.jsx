@@ -13,6 +13,10 @@ const index = ({ handleHistory }) => {
           overflow: "auto",
 
           height: "80vh",
+          "&::-webkit-scrollbar": {
+            display: "none",
+          },
+          scrollbarWidth: "none",
 
           // marginBottom: "3rem",
         }}

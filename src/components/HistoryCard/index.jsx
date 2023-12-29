@@ -2,6 +2,9 @@ import React from "react";
 
 import { Box, Avatar, Typography } from "@mui/material";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import MusicNoteIcon from "@mui/icons-material/MusicNote";
+import ReplyIcon from "@mui/icons-material/Reply";
+import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
 
 const logs = [
   {
@@ -9,24 +12,28 @@ const logs = [
     title: "Card To Card",
     category: "Maria",
     amount: "+ $34.00",
+    icon: <ReplyIcon />,
   },
   {
     id: 2,
     title: "Apple Music",
     category: "Online",
     amount: "- $21.00",
+    icon: <MusicNoteIcon />,
   },
   {
     id: 3,
     title: "Uber",
     category: "Service",
     amount: "- $1221.00",
+    icon: <DirectionsCarIcon />,
   },
   {
     id: 4,
     title: "Uber",
     category: "Service",
     amount: "- $2467.00",
+    icon: <DirectionsCarIcon />,
   },
 ];
 const index = () => {
@@ -66,7 +73,7 @@ const index = () => {
                 marginBottom: "1rem",
               }}
             >
-              <LocalPhoneIcon />
+              {log.icon}
             </Avatar>
             {/* </Box> */}
             <Box
@@ -127,7 +134,7 @@ const index = () => {
                 marginBottom: "1rem",
               }}
             >
-              <LocalPhoneIcon />
+              {log.icon}
             </Avatar>
             {/* </Box> */}
             <Box
