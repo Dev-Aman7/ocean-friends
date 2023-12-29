@@ -66,7 +66,7 @@ const index = () => {
         </Box>
         <Button
           variant="outlined"
-          disabled={log.amount == 0}
+          disabled={Number(log.amount) === 0}
           sx={{
             "&:disabled": {
               color: "primary.main",
